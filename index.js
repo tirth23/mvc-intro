@@ -46,6 +46,7 @@ const productSchema = new mongoose.Schema(
 			required: true,
 			minLength: 8,
 			validate: {
+        /* if password and confirmPassword not same in reqbody it will throw error */
 				validator: function () {
 					return this.password === this.confirmPassword;
 				},
