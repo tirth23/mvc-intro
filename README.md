@@ -36,16 +36,16 @@
 ### Controller: Manages the flow of the application, handles user input, and updates the Model and View. In Node.js, controllers are usually functions or classes that handle HTTP requests and responses. controller orchestrates the communication between the view and the model
 
 ## Benifits of MVC Architecture
-a. Separation of Concerns: Divides the application into Model, View, and Controller for clear separation of responsibilities.
-b. Modular Development: Supports development and maintenance of separate, reusable modules for each component.
-c. Improved Code Reusability: Allows reuse of Models, Views, and Controllers in different parts of the application or other projects.
-d. Enhanced Maintainability: Changes in one component have minimal impact on the others, simplifying maintenance and debugging.
-e. Scalability: Facilitates parallel development and the addition of new features without major rework.
-f. User Interface Flexibility: Adapts to various user interfaces while keeping the core logic intact.
-g. Efficient Testing and Debugging: Enables isolated unit testing for each component, easing issue identification and resolution.
-h. Parallel Development: Supports multiple developers or teams working on different components simultaneously.
-i. Support for Multiple Views: Utilizes the same Model and Controller with multiple Views for diverse user interfaces.
-j. Long-Term Maintainability: Promotes organized and understandable code, reducing technical debt over time.
+### a. Separation of Concerns: Divides the application into Model, View, and Controller for clear separation of responsibilities.
+### b. Modular Development: Supports development and maintenance of separate, reusable modules for each component.
+### c. Improved Code Reusability: Allows reuse of Models, Views, and Controllers in different parts of the application or other projects.
+### d. Enhanced Maintainability: Changes in one component have minimal impact on the others, simplifying maintenance and debugging.
+### e. Scalability: Facilitates parallel development and the addition of new features without major rework.
+### f. User Interface Flexibility: Adapts to various user interfaces while keeping the core logic intact.
+### g. Efficient Testing and Debugging: Enables isolated unit testing for each component, easing issue identification and resolution.
+### h. Parallel Development: Supports multiple developers or teams working on different components simultaneously.
+### i. Support for Multiple Views: Utilizes the same Model and Controller with multiple Views for diverse user interfaces.
+### j. Long-Term Maintainability: Promotes organized and understandable code, reducing technical debt over time.
 
 ## Project Structure:
 1. index.js (main file)
