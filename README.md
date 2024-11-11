@@ -36,16 +36,16 @@
 ### Controller: Manages the flow of the application, handles user input, and updates the Model and View. In Node.js, controllers are usually functions or classes that handle HTTP requests and responses. controller orchestrates the communication between the view and the model
 
 ## Benifits of MVC Architecture
-### a. Separation of Concerns: Divides the application into Model, View, and Controller for clear separation of responsibilities.
-### b. Modular Development: Supports development and maintenance of separate, reusable modules for each component.
-### c. Improved Code Reusability: Allows reuse of Models, Views, and Controllers in different parts of the application or other projects.
-### d. Enhanced Maintainability: Changes in one component have minimal impact on the others, simplifying maintenance and debugging.
-### e. Scalability: Facilitates parallel development and the addition of new features without major rework.
-### f. User Interface Flexibility: Adapts to various user interfaces while keeping the core logic intact.
-### g. Efficient Testing and Debugging: Enables isolated unit testing for each component, easing issue identification and resolution.
-### h. Parallel Development: Supports multiple developers or teams working on different components simultaneously.
-### i. Support for Multiple Views: Utilizes the same Model and Controller with multiple Views for diverse user interfaces.
-### j. Long-Term Maintainability: Promotes organized and understandable code, reducing technical debt over time.
+### Separation of Concerns: Divides the application into Model, View, and Controller for clear separation of responsibilities.
+### Modular Development: Supports development and maintenance of separate, reusable modules for each component.
+### Improved Code Reusability: Allows reuse of Models, Views, and Controllers in different parts of the application or other projects.
+### Enhanced Maintainability: Changes in one component have minimal impact on the others, simplifying maintenance and debugging.
+### Scalability: Facilitates parallel development and the addition of new features without major rework.
+### User Interface Flexibility: Adapts to various user interfaces while keeping the core logic intact.
+### Efficient Testing and Debugging: Enables isolated unit testing for each component, easing issue identification and resolution.
+### Parallel Development: Supports multiple developers or teams working on different components simultaneously.
+### Support for Multiple Views: Utilizes the same Model and Controller with multiple Views for diverse user interfaces.
+### Long-Term Maintainability: Promotes organized and understandable code, reducing technical debt over time.
 
 ## Project Structure:
 1. index.js (main file)
@@ -58,4 +58,19 @@
 5. routes/ (for route definitions)
     productRoutes.js
 6. middlewares/ (for any middlewares, if needed)
+
+## Hooks
+### Mongoose, an Object Data Modeling (ODM) library for MongoDB and Node.js, provides middleware (also called hooks) that can be executed at various points in the lifecycle of a document. Pre and post hooks are two types of middleware that allow you to run code before and after certain operations.
+### In Mongoose, hooks (also known as middleware) are functions that run before or after certain events, like "triggers." They allow you to perform actions such as validation before saving data or logging after data is saved.
+### Mongoose schemas are great for basic validations (like type checking, required fields, and simple constraints), pre hooks can handle more complex, custom validations that might be too intricate or specific for the schema definition. By using hooks, you can keep your schema definitions clean and focused on the structure and basic constraints of your data, while hooks can manage the operational or business logic aspects.
+
+## (Pre Hooks)[https://mongoosejs.com/docs/middleware.html#pre]
+### Data Validation and Sanitization: Beyond the built-in validation rules in Mongoose, pre hooks can be used for custom validations or to sanitize inputs before they are saved to the database.
+### Password Hashing: In user models, pre-save hooks are commonly used to hash passwords before storing them in the database.
+### Setting Default Values: Automatically setting values for certain fields before saving, especially when these values aren't provided in the input.
+### Timestamping: Although Mongoose supports automatic timestamping, in some cases, you might need custom timestamp logic that can be implemented in a pre-save hook.
+### Data Transformation: Altering data before it's persisted, like formatting strings, converting units, or setting complex derived fields.
+### Logging and Auditing: Recording activities or changes for auditing purposes just before a document is modified or created.
+
+
 
