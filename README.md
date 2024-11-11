@@ -64,7 +64,7 @@
 ### In Mongoose, hooks (also known as middleware) are functions that run before or after certain events, like "triggers." They allow you to perform actions such as validation before saving data or logging after data is saved.
 ### Mongoose schemas are great for basic validations (like type checking, required fields, and simple constraints), pre hooks can handle more complex, custom validations that might be too intricate or specific for the schema definition. By using hooks, you can keep your schema definitions clean and focused on the structure and basic constraints of your data, while hooks can manage the operational or business logic aspects.
 
-## (Pre Hooks)[https://mongoosejs.com/docs/middleware.html#pre]
+## [Pre Hooks](https://mongoosejs.com/docs/middleware.html#pre)
 ### Data Validation and Sanitization: Beyond the built-in validation rules in Mongoose, pre hooks can be used for custom validations or to sanitize inputs before they are saved to the database.
 ### Password Hashing: In user models, pre-save hooks are commonly used to hash passwords before storing them in the database.
 ### Setting Default Values: Automatically setting values for certain fields before saving, especially when these values aren't provided in the input.
