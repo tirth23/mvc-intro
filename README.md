@@ -59,12 +59,36 @@
     productRoutes.js
 6. middlewares/ (for any middlewares, if needed)
 
+```
+                  ┌──────────────────────────────────┐
+                  │  API GET /api/product/:id        │
+                  └──────────────────────────────────┘
+                               │
+            ┌──────────────────┼──────────────────┐
+            │                  │                  │
+        ┌───────┐          ┌───────┐          ┌───────┐
+        │ User  │          │Product│          │Review │
+        │Router │          │Router │          │Router │
+        └───────┘          └───────┘          └───────┘
+            │                  │                  │
+            │                  │                  │
+    ┌───────────────┐ ┌───────────────┐ ┌───────────────┐
+    │User Controller│ │Product Ctrl.  │ │Review Ctrl.   │
+    └───────────────┘ └───────────────┘ └───────────────┘
+            │                  │                  │
+            │                  │                  │
+    ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+    │User Model   │     │Product Model│     │Review Model │
+    └─────────────┘     └─────────────┘     └─────────────┘
+
+```
+
 ## Hooks
 ### Mongoose, an Object Data Modeling (ODM) library for MongoDB and Node.js, provides middleware (also called hooks) that can be executed at various points in the lifecycle of a document. Pre and post hooks are two types of middleware that allow you to run code before and after certain operations.
 ### In Mongoose, hooks (also known as middleware) are functions that run before or after certain events, like "triggers." They allow you to perform actions such as validation before saving data or logging after data is saved.
 ### Mongoose schemas are great for basic validations (like type checking, required fields, and simple constraints), pre hooks can handle more complex, custom validations that might be too intricate or specific for the schema definition. By using hooks, you can keep your schema definitions clean and focused on the structure and basic constraints of your data, while hooks can manage the operational or business logic aspects.
 
-## [Pre Hooks](https://mongoosejs.com/docs/middleware.html#pre)
+## Pre Hooks [Ref Link](https://mongoosejs.com/docs/middleware.html#pre)
 ### Data Validation and Sanitization: Beyond the built-in validation rules in Mongoose, pre hooks can be used for custom validations or to sanitize inputs before they are saved to the database.
 ### Password Hashing: In user models, pre-save hooks are commonly used to hash passwords before storing them in the database.
 ### Setting Default Values: Automatically setting values for certain fields before saving, especially when these values aren't provided in the input.
@@ -72,5 +96,7 @@
 ### Data Transformation: Altering data before it's persisted, like formatting strings, converting units, or setting complex derived fields.
 ### Logging and Auditing: Recording activities or changes for auditing purposes just before a document is modified or created.
 
-
+## Post Hooks [Ref Link](https://mongoosejs.com/docs/middleware.html#post)
+### Logging: Post hooks are useful for logging operations after they have occurred, such as logging the creation or modification of documents.
+### Data Aggregation or Analysis: Performing aggregations or data analysis tasks after a certain operation, like recalculating averages or metrics post-update.
 
