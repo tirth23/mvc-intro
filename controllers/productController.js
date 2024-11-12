@@ -34,6 +34,11 @@ const createProduct = async (req, res) => {
 		confirmPassword,
 	} = req.body;
 	try {
+		/*  
+    ProductModel.create(), which is a shortcut for new ProductModel(data).save(). 
+    When ProductModel.create() is called, Mongoose automatically triggers any pre("save") hooks defined in the schema 
+    */
+		console.log("inside try");
 		const product = await ProductModel.create({
 			product_name: product_name,
 			product_price: product_price,
@@ -44,7 +49,7 @@ const createProduct = async (req, res) => {
 		});
 		console.log(product);
 		console.log("product created successfully");
-		return res.status(201).json({ message: "Product creted successfully" });
+		return res.status(201).json({ message: "Product created successfully" });
 	} catch (err) {
 		console.log(err);
 		return res.status(400).json({ message: err.message });

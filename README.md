@@ -60,23 +60,26 @@
 6. middlewares/ (for any middlewares, if needed)
 
 ```
-                  ┌──────────────────────────────────┐
-                  │  API GET /api/product/:id        │
-                  └──────────────────────────────────┘
+              ┌───────────────────────────────────────┐
+              │  API GET /api/products/:id            |
+              | Routes are defined under /api/products│
+              └───────────────────────────────────────┘
                                │
+                Each entity has a dedicated router
             ┌──────────────────┼──────────────────┐
             │                  │                  │
+Each Router contains dedicated sub route with HTTPS method link to controller
         ┌───────┐          ┌───────┐          ┌───────┐
         │ User  │          │Product│          │Review │
         │Router │          │Router │          │Router │
         └───────┘          └───────┘          └───────┘
             │                  │                  │
-            │                  │                  │
+Each router connects to a specific controller & controllers contain business logic for each route and interact with models
     ┌───────────────┐ ┌───────────────┐ ┌───────────────┐
     │User Controller│ │Product Ctrl.  │ │Review Ctrl.   │
     └───────────────┘ └───────────────┘ └───────────────┘
             │                  │                  │
-            │                  │                  │
+Each Model has Schema & directly interfaces with the database to manage data for each entity
     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
     │User Model   │     │Product Model│     │Review Model │
     └─────────────┘     └─────────────┘     └─────────────┘
